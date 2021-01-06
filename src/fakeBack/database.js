@@ -75,6 +75,9 @@ export const dbCreateTaskBulk = async (n = 50) => {
 };
 
 window._dbCreateTaskBulk = dbCreateTaskBulk;
+window._dbDestroy = async () => {
+  await db.delete();
+};
 
 export const dbGetTasks = async (limits) => {
   const { from, to } = limits;

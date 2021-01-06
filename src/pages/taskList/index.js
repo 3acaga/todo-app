@@ -26,6 +26,7 @@ const TaskList = () => {
           shape="round"
           icon={<PlusOutlined />}
           onClick={openModal}
+          data-testid="add-task-button"
         >
           Add new task
         </CreateTaskButton>

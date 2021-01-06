@@ -2,9 +2,9 @@ import React from "react";
 import { LoadingOutlined } from "@ant-design/icons";
 import styled from "styled-components/macro";
 
-const Loader = () => {
+const Loader = (props) => {
   return (
-    <Wrapper>
+    <Wrapper {...props}>
       <LoadingOutlined />
     </Wrapper>
   );

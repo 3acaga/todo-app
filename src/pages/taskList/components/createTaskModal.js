@@ -41,21 +41,26 @@ const CreateTaskModal = ({ isOpen, closeModal }) => {
       visible={isOpen}
       onOk={handleCreateModal}
       onCancel={closeModal}
+      okButtonProps={{
+        "data-testid": "add-task-confirm",
+      }}
       centered
     >
       <FormikProvider value={formik}>
-        <ModalForm>
+        <ModalForm data-testid="add-task-form">
           <TextArea
             //
             name="description"
             placeholder="Description"
             onChange={formik.handleChange}
             rows={4}
+            data-testid="add-task-description"
           />
 
           <FormDatePicker
             //
             name="validUntil"
+            data-testid="add-task-validUntil"
           />
         </ModalForm>
       </FormikProvider>

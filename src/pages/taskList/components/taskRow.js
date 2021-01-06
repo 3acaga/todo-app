@@ -38,7 +38,7 @@ const TaskRow = ({ task: { id, isFinished, validUntil, description } }) => {
   }, [dispatch, id]);
 
   return (
-    <Row>
+    <Row data-testid="task-row">
       <ColCentered span={2}>
         {isExpired ? (
           <ExpiredIcon />

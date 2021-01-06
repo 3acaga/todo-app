@@ -13,7 +13,7 @@ const HttpClient = axios.create({
 
 const Router = require("../../fakeBack").default; // this will not go to the bundle
 const mock = new AxiosMock(HttpClient, {
-  delayResponse: 1000,
+  delayResponse: process.env.NODE_ENV === "test" ? 0 : 500,
 });
 
 mock.onAny(/.*/).reply(async (config) => {

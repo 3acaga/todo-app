@@ -50,11 +50,11 @@ const ListComponent = () => {
         pageStart={0}
         loadMore={handleLoad}
         hasMore={total > loaded}
-        loader={<Loader key={-1} />}
+        loader={<Loader key={-1} data-testid="tasks-infinite-loader" />}
         useWindow={false}
       >
         {isInitialLoading ? (
-          <Loader key={-1} />
+          <Loader key={-1} data-testid="tasks-initial-loader" />
         ) : (
           taskList.map((task, ix) => (
             <React.Fragment key={task.id}>

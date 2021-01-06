@@ -35,11 +35,12 @@ export const tasksReducer = createReducer(initialState, {
   },
   ////////////////////////////////////////////////////////////////////////////
   [createTaskAction.fulfilled]: (draft, { payload }) => {
-    draft.meta.total += 1;
-
     if (draft.meta.loaded === draft.meta.total) {
       draft.resources.push(payload.resource);
+      draft.meta.loaded += 1;
     }
+
+    draft.meta.total += 1;
   },
   ////////////////////////////////////////////////////////////////////////////
   [deleteTaskAction.fulfilled]: (draft, { payload }) => {
